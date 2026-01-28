@@ -3,8 +3,20 @@
 //By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 package br.com.henrique.projecteuler;
 
-public class PairFibonacci {
-  public static execute(){
-    
+public class FibonacciPair {
+  public void execute(){
+    int sum = 0;
+    int a = 1;
+    int b = 2;
+
+    while(b < 4000000){
+      if(b % 2 == 0){
+        sum += b;
+      }
+      int next = a + b;
+      a = b;
+      b = next;
+    }
+    System.out.println(sum);
   }
 }
